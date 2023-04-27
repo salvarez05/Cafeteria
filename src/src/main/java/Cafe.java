@@ -2,16 +2,18 @@ public class Cafe {
     protected float gramosCafe;
 
     protected int mililitrosAgua;
-    protected char tamaño;
+    protected String tamaño;
+    protected String nombre;
 
-    public Cafe(float gramosCafe, int mililitrosAgua, char tamaño) {
+    public Cafe( String nombre,float gramosCafe, int mililitrosAgua, String tamaño) {
         this.gramosCafe= gramosCafe;
         this.mililitrosAgua= mililitrosAgua;
         this.tamaño=tamaño;
+        this.nombre= nombre;
 
     }
 
-    public char getTamaño() {
+    public String getTamaño() {
         return tamaño;
     }
 
@@ -23,19 +25,28 @@ public class Cafe {
         return mililitrosAgua;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setGramosCafe(float gramosCafe) {
         this.gramosCafe = gramosCafe;
     }
 
-    public void setTamaño(char tamaño) {
+    public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
     }
 
     public void setMililitrosAgua(int mililitrosAgua) {
         this.mililitrosAgua = mililitrosAgua;
     }
-    public static void main(String[] args) {
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
+    public String toString(){
+        return "Cafe "+getNombre()+" de tamaño "+ getTamaño()+ " con "+getGramosCafe()+" gramos de cafe y "+getMililitrosAgua()+" mm de agua";
+    }
 
 }
