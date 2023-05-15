@@ -1,9 +1,17 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cafeteria {
-    public String nombre;
-    public String direccion;
-    public String redesSociales;
+    private ArrayList<Cafe> cafesALaVenta= new ArrayList<>();
+    private String nombre;
+    private String direccion;
+    private String redesSociales;
+
+    public Cafeteria(String nombre,String direccion,String redesSociales){
+        this.direccion= direccion;
+        this.nombre=nombre;
+        this.redesSociales= redesSociales;
+    }
 
     public void setRedesSociales(String redesSociales) {
         this.redesSociales = redesSociales;
@@ -21,6 +29,10 @@ public class Cafeteria {
         return nombre;
     }
 
+    public void setCafesALaVenta(ArrayList<Cafe> cafesALaVenta) {
+        this.cafesALaVenta = cafesALaVenta;
+    }
+
     public String getDireccion() {
         return direccion;
     }
@@ -29,15 +41,30 @@ public class Cafeteria {
         return redesSociales;
     }
 
-    public static void main(String[] args) {
-        ArrayList<Cafe> cafes = new ArrayList<>();
-        cafes.add(new Cafe("Normal", 4.3F, 9, "mediano"));
-        cafes.add(new Cafe("Latte", 8F, 15, "grande"));
-        for (int i = 0; i < cafes.size(); i++) {
-            cafes.get(i).toString();
-            System.out.println(cafes.get(i));
+    public List<Cafe> getCafesALaVenta() {
+        return cafesALaVenta;
+    }
+
+    public void agregarCafe(String nombre, float gramosCafe, int mililitrosAgua, String tamano){
+        Cafe cafe = new Cafe(nombre, gramosCafe, mililitrosAgua, tamano);
+        this.cafesALaVenta.add(cafe);
+    }
+    public void removerCafe(int numero){
+        getCafesALaVenta().remove(numero);
+    }
+    public void buscarCafe (String tamaño){
+        int numero=0;
+        for (int i = 0; i < getCafesALaVenta().size(); i++) {
+            numero++;
+            if(getCafesALaVenta().get(i).getTamaño().equals(tamaño)){
+                System.out.println("Hay un cafe de tamaño "+tamaño+" en la posicion numero "+numero);
+            }
         }
     }
+
+
+
+
 }
 
 
