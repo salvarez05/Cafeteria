@@ -61,6 +61,9 @@ public class Cafeteria {
             }
         }
     }
+    public String toString(){
+        return "La cafeteria "+getNombre()+" con direccion "+ getDireccion()+ " y redes sociales en "+getRedesSociales();
+    }
 
 
 

@@ -11,9 +11,10 @@ public class Main {
         mostrarCafes(cafeteriaPrueba);
     }
 
-    private static void mostrarCafes(Cafeteria cafeteriaPrueba) {
-        for (int i = 0; i < cafeteriaPrueba.getCafesALaVenta().size(); i++) {
-            System.out.println(cafeteriaPrueba.getCafesALaVenta().get(i).toString());
+    private static void mostrarCafes(Cafeteria cafeteria) {
+        System.out.println(cafeteria.toString()+" tiene a la venta los siguientes cafes:");
+        for (int i = 0; i < cafeteria.getCafesALaVenta().size(); i++) {
+            System.out.println(cafeteria.getCafesALaVenta().get(i).toString());
         }
     }
 
